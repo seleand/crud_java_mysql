@@ -1,0 +1,20 @@
+CREATE SCHEMA `usermanager` DEFAULT CHARACTER SET utf8 ;
+
+CREATE TABLE `usermanager`.`user` (
+  `id` INT(8) NOT NULL,
+  `name` VARCHAR(25) NOT NULL,
+  `age` INT NOT NULL,
+  `isAdmin` BIT(1) NOT NULL,
+  `createdDate` TIMESTAMP() NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user1', '20', b'0');
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user2', '30', b'0');
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('admin', '40', b'1');
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user3', '50', b'0');
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user4', '600', b'0');
