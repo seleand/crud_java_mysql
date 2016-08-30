@@ -59,7 +59,7 @@
 
 <h1>User List</h1>
 
-<c:if test="${!empty listUsers}">
+<c:if test="${!empty usersByPageNumber}">
   <table class="tg">
     <tr>
       <th width="80">ID</th>
@@ -72,7 +72,7 @@
       <th width="60">Edit</th>
       <th width="60">Delete</th>
     </tr>
-    <c:forEach items="${listUsers}" var="user">
+    <c:forEach items="${usersByPageNumber}" var="user">
       <tr>
         <td>${user.id}</td>
         <td><a href="/userdata/${user.id}" target="_blank">${user.name}</a></td>
@@ -91,9 +91,8 @@
   </table>
 </c:if>
 
-<%--
 <c:url var="firstUrl" value="/pages/1" />
-<c:url var="lastUrl" value="/pages/${deploymentLog.totalPages}" />
+<c:url var="lastUrl" value="/pages/${countTotalPages}" />
 <c:url var="prevUrl" value="/pages/${currentIndex - 1}" />
 <c:url var="nextUrl" value="/pages/${currentIndex + 1}" />
 
@@ -121,7 +120,7 @@
       </c:choose>
     </c:forEach>
     <c:choose>
-      <c:when test="${currentIndex == deploymentLog.totalPages}">
+      <c:when test="${currentIndex == countTotalPages}">
         <li class="disabled"><a href="#">&gt;</a></li>
         <li class="disabled"><a href="#">&gt;&gt;</a></li>
       </c:when>
@@ -132,10 +131,9 @@
     </c:choose>
   </ul>
 </div>
---%>
 
 
-<h1>Add a user</h1>
+<h1>Add/Edit a user</h1>
 
 <c:url var="addAction" value="/users/add"/>
 
@@ -184,21 +182,6 @@
         <form:checkbox path="isAdmin"/>
       </td>
     </tr>
-<%--
-    <c:if test="${!empty user.name}">
-      <tr>
-        <td>
-          <form:label path="createdDate">
-            <spring:message text="Created"/>
-          </form:label>
-        </td>
-        <td>
-          <form:input path="createdDate" readonly="true" size="20" disabled="true"/>
-          <form:hidden path="createdDate"/>
-        </td>
-      </tr>
-    </c:if>
---%>
     <tr>
       <td colspan="2">
         <c:if test="${!empty user.name}">
@@ -215,10 +198,6 @@
 </form:form>
 
 <h1>Find users by name</h1>
-
-<%--
-<c:url var="addAction" value="/findusers"/>
---%>
 
 <form method="get" action="/findusers" target="_blank">
   <label for="searchName">Name for search</label>

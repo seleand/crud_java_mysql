@@ -18,3 +18,7 @@ INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('admin', '40
 INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user3', '50', b'0');
 
 INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user4', '600', b'0');
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('user5', '20', b'0');
+
+INSERT INTO `usermanager`.`user` (`name`, `age`, `isAdmin`) VALUES ('admin2', '30', b'1');

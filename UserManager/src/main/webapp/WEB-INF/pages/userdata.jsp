@@ -60,11 +60,11 @@
     <th width="120">Created</th>
   </tr>
   <tr>
-    <td>${user.id}</td>
-    <td>${user.name}</td>
-    <td>${user.age}</td>
-    <td>${user.isAdmin}</td>
-    <td>${user.createdDate}</td>
+    <td>${chosenuser.id}</td>
+    <td>${chosenuser.name}</td>
+    <td>${chosenuser.age}</td>
+    <td>${chosenuser.isAdmin}</td>
+    <td>${chosenuser.createdDate}</td>
   </tr>
 </table>
 
